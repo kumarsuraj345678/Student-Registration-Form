@@ -1,187 +1,404 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Registration Form</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="./script.js" defer></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Student Registration Form</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
-    integrity="sha384-1ZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9s+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-    <script src="./script.js" type="text/javascript"></script>
-</head>
-
-<body>
-  <div class="wrapper">
-    <div class="title">Student Registration Form
-    </div>
-    <form action="POST" data-netlify="true">
-      <div class="form">
-
-        <div class="inputfield">
-          <label>First Name</label>
-          <input type="text" class="input" id="name" name="fname" placeholder="Enter first name" maxlength="30"
-            pattern="[A-Za-z]{1,32}" title="Enter only alphabets" required>
-        </div>
-
-        <div class="inputfield">
-          <label>Last Name</label>
-          <input type="text" class="input" id="name" name="lname" placeholder="Enter last name" maxlength="30"
-            pattern="[A-Za-z]{1,32}" title="Enter only alphabets" required>
-        </div>
-
-        <div class="inputfield" id="gender">
-          <label for="">Gender</label>
-          <input type="radio" name="gender" id="radio" value="Male">Male
-          <input type="radio" name="gender" id="radio" value="Female">Female
-        </div>
-
-        <div class="inputfield">
-          <label for="">Age</label>
-          <input type="text" class="input" name="age" placeholder="Enter your age" maxlength="2" pattern="^[0-9]{2}$"
-            required placeholder="Enter your age" title="Enter numbers only">
-        </div>
-
-        <div class="inputfield">
-          <label for="">Date of Birth</label>
-          <input type="date" class="input" name="dob" required>
-        </div>
-
-        <div class="inputfield">
-          <label>Email Address</label>
-          <input type="email" class="input" name="email" placeholder="Enter your email"
-            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$" required>
-        </div>
-
-        <div class="inputfield">
-          <label>Password</label>
-          <input type="password" class="input" id="password" name="" placeholder="Enter your password min 8 characters"
-            autocomplete="off" onkeyup='check()' pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-            title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
-            maxlength="100" minlength="8" required>
-        </div>
-
-        <div class="inputfield">
-          <label>Confirm Password</label>
-          <input type="password" onkeyup='check()' class="input" id="confirm-password" name=""
-            placeholder="Confirm password" autocomplete="off" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-            title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
-            maxlength="100" minlength="8" required>
-        </div>
-
-        <p id="message"></p>
-
-        <div class="inputfield">
-          <label for="">Phone Number</label>
-          <div class="custom-select" id="phone-codes">
-            <select id="phone-code">
-              <option value="+91">+91</option>
-            </select>
-          </div>
-          <input type="tel" class="input" name="phone-number" maxlength="10" id="phone-number"
-            placeholder="Enter your phone number" pattern="[7-9]{1}[0-9]{9}" title="Please enter valid phone number">
-        </div>
-
-        <div class="inputfield">
-          <label>Address</label>
-          <textarea class="textarea" name="address" id="" cols="30" rows="5" placeholder="Enter your address"
-            pattern="^[a-zA-Z][a-zA-Z0-9-_.]{5,12}$" maxlength="100" required></textarea>
-        </div>
-
-        <div class="inputfield">
-          <label>State</label>
-          <div class="custom_select">
-            <select id="state" name="state" required>
-              <option value="">--Select your state--</option>
-              <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
-              <option value="Andhra Pradesh">Andhra Pradesh</option>
-              <option value="Arunachal Pradesh">Arunachal Pradesh</option>
-              <option value="Assam">Assam</option>
-              <option value="Bihar">Bihar</option>
-              <option value="Chandigarh">Chandigarh</option>
-              <option value="Chhattisgarh">Chhattisgarh</option>
-              <option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
-              <option value="Daman and Diu">Daman and Diu</option>
-              <option value="Delhi">Delhi</option>
-              <option value="Goa">Goa</option>
-              <option value="Gujarat">Gujarat</option>
-              <option value="Haryana">Haryana</option>
-              <option value="Himachal Pradesh">Himachal Pradesh</option>
-              <option value="Jammu and Kashmir">Jammu and Kashmir</option>
-              <option value="Jharkhand">Jharkhand</option>
-              <option value="Karnataka">Karnataka</option>
-              <option value="Kerala">Kerala</option>
-              <option value="Ladakh">Ladakh</option>
-              <option value="Lakshadweep">Lakshadweep</option>
-              <option value="Madhya Pradesh">Madhya Pradesh</option>
-              <option value="Maharashtra">Maharashtra</option>
-              <option value="Manipur">Manipur</option>
-              <option value="Meghalaya">Meghalaya</option>
-              <option value="Mizoram">Mizoram</option>
-              <option value="Nagaland">Nagaland</option>
-              <option value="Odisha">Odisha</option>
-              <option value="Puducherry">Puducherry</option>
-              <option value="Punjab">Punjab</option>
-              <option value="Rajasthan">Rajasthan</option>
-              <option value="Sikkim">Sikkim</option>
-              <option value="Tamil Nadu">Tamil Nadu</option>
-              <option value="Telangana">Telangana</option>
-              <option value="Tripura">Tripura</option>
-              <option value="Uttar Pradesh">Uttar Pradesh</option>
-              <option value="Uttarakhand">Uttarakhand</option>
-              <option value="West Bengal">West Bengal</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="inputfield">
-          <label>Pin Code</label>
-          <input type="text" class="input" name="pincode" placeholder="Enter your pin code" maxlength="6"
-            pattern="^[0-9]{6}$" required>
-        </div>
-
-        <div class="inputfield" id="hobbies" >
-          <label for="">Hobbies</label>
-          <div class="hobbies" >
-            <input type="checkbox" name="Hobbies" id="" value="Music">
-            <label for="">Music</label>
-            <input type="checkbox" name="Hobbies" id="" value="Movies">
-            <label for="">Movies</label>
-            <input type="checkbox" name="Hobbies" id="" value="Sports">
-            <label for="">Sports</label>
-            <input type="checkbox" name="Hobbies" id="" value="Travel">
-            <label for="">Travel</label>
-          </div>
-        </div>
-
-        <div class="inputfield">
-          <label>Upload Photo</label><p id="file-size">*Max size 100kb.</p>
-          <input type="file" name="myfile" id="myfile" placeholder="Upload your photo" rows="7" required />
-          
-        </div>
-
-        <div class="inputfield terms">
-          <label class="check">
-            <input type="checkbox" name="check" value="Declared" required>
-            <span class="checkmark"></span>
-          </label>
-          <p>I hereby declare that the above information provided is true and correct.</p>
-        </div>
-
-        <div class="inputfield" required>
-          <div data-netlify-recaptcha="true"></div>
-        </div>
-
-        <div class="inputfield btns" id="btn">
-          <button type="submit" value="Register" class="btn" onclick="checkPassword()">Register</button>
-          <button type="reset" value="Reset" class="btn">Reset</button>
-        </div>
-
+  <body>
+    <div class="wrapper">
+      <div class="title">
+        <i class="fas fa-user-graduate"></i>
+        <h1>Student Registration Form</h1>
       </div>
-    </form>
-  </div>
+      <form
+        method="POST"
+        action="#"
+        data-netlify="true"
+        name="student-registration-form"
+      >
+        <div class="form">
+          <div class="form-section">
+            <h2>Personal Information</h2>
 
-</body>
+            <div class="inputfield">
+              <label for="fname">First Name</label>
+              <input
+                type="text"
+                class="input"
+                id="fname"
+                name="fname"
+                placeholder="Enter your first name"
+                maxlength="30"
+                pattern="[A-Za-z\s\-]{1,32}"
+                title="Please enter valid name"
+                required
+              />
+            </div>
 
+            <div class="inputfield">
+              <label for="lname">Last Name</label>
+              <input
+                type="text"
+                class="input"
+                id="lname"
+                name="lname"
+                placeholder="Enter your last name"
+                maxlength="30"
+                pattern="[A-Za-z\s\-]{1,32}"
+                title="Please enter valid name"
+                required
+              />
+            </div>
+
+            <div class="inputfield">
+              <label>Gender</label>
+              <div class="radio-group">
+                <div class="radio-option">
+                  <input
+                    type="radio"
+                    name="gender"
+                    id="male"
+                    value="Male"
+                    required
+                  />
+                  <label for="male">Male</label>
+                </div>
+                <div class="radio-option">
+                  <input
+                    type="radio"
+                    name="gender"
+                    id="female"
+                    value="Female"
+                  />
+                  <label for="female">Female</label>
+                </div>
+                <div class="radio-option">
+                  <input type="radio" name="gender" id="other" value="Other" />
+                  <label for="other">Other</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="inputfield">
+              <label for="dob">Date of Birth</label>
+              <input type="date" class="input" id="dob" name="dob" required />
+            </div>
+
+            <div class="inputfield">
+              <label for="age">Age</label>
+              <input
+                type="text"
+                class="input"
+                id="age"
+                name="age"
+                placeholder="Age will be calculated automatically"
+                readonly
+                required
+              />
+            </div>
+          </div>
+
+          <div class="form-section">
+            <h2>Contact Information</h2>
+
+            <div class="inputfield">
+              <label for="email">Email Address</label>
+              <input
+                type="email"
+                class="input"
+                id="email"
+                name="email"
+                aria-label="Email Address"
+                placeholder="Enter your email"
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$"
+                title="Please enter valid email"
+                required
+              />
+            </div>
+
+            <div class="inputfield">
+              <label for="phone-number">Phone Number</label>
+              <div class="phone-input">
+                <div class="custom-select">
+                  <select id="phone-code" name="phone-code">
+                    <option value="+91">+91</option>
+                  </select>
+                </div>
+                <input
+                  type="tel"
+                  class="input"
+                  name="phone-number"
+                  maxlength="10"
+                  id="phone-number"
+                  placeholder="Enter your phone number"
+                  pattern="[6-9]{1}[0-9]{9}"
+                  title="Please enter valid phone number"
+                />
+              </div>
+            </div>
+
+            <div class="inputfield">
+              <label for="address">Address</label>
+              <textarea
+                class="textarea"
+                name="address"
+                id="address"
+                rows="3"
+                placeholder="Enter your address"
+                maxlength="100"
+                required
+              ></textarea>
+            </div>
+
+            <div class="two-column-group">
+              <div class="inputfield">
+                <label for="state">State</label>
+                <div class="custom-select" required>
+                  <select id="state" name="state" required>
+                    <option hidden>Select your State or UT</option>
+                    <option value="Andaman and Nicobar Islands">
+                      Andaman and Nicobar Islands
+                    </option>
+                    <option value="Andhra Pradesh">Andhra Pradesh</option>
+                    <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                    <option value="Assam">Assam</option>
+                    <option value="Bihar">Bihar</option>
+                    <option value="Chandigarh">Chandigarh</option>
+                    <option value="Chhattisgarh">Chhattisgarh</option>
+                    <option value="Dadra and Nagar Haveli">
+                      Dadra and Nagar Haveli
+                    </option>
+                    <option value="Daman and Diu">Daman and Diu</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Goa">Goa</option>
+                    <option value="Gujarat">Gujarat</option>
+                    <option value="Haryana">Haryana</option>
+                    <option value="Himachal Pradesh">Himachal Pradesh</option>
+                    <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                    <option value="Jharkhand">Jharkhand</option>
+                    <option value="Karnataka">Karnataka</option>
+                    <option value="Kerala">Kerala</option>
+                    <option value="Ladakh">Ladakh</option>
+                    <option value="Lakshadweep">Lakshadweep</option>
+                    <option value="Madhya Pradesh">Madhya Pradesh</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Manipur">Manipur</option>
+                    <option value="Meghalaya">Meghalaya</option>
+                    <option value="Mizoram">Mizoram</option>
+                    <option value="Nagaland">Nagaland</option>
+                    <option value="Odisha">Odisha</option>
+                    <option value="Puducherry">Puducherry</option>
+                    <option value="Punjab">Punjab</option>
+                    <option value="Rajasthan">Rajasthan</option>
+                    <option value="Sikkim">Sikkim</option>
+                    <option value="Tamil Nadu">Tamil Nadu</option>
+                    <option value="Telangana">Telangana</option>
+                    <option value="Tripura">Tripura</option>
+                    <option value="Uttar Pradesh">Uttar Pradesh</option>
+                    <option value="Uttarakhand">Uttarakhand</option>
+                    <option value="West Bengal">West Bengal</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="inputfield">
+                <label for="pincode">Pin Code</label>
+                <input
+                  type="text"
+                  class="input"
+                  id="pincode"
+                  name="pincode"
+                  placeholder="Enter your pin code"
+                  maxlength="6"
+                  pattern="^[0-9]{6}$"
+                  title="Please enter valid pin code"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <h2>Security Information</h2>
+
+            <div class="inputfield">
+              <label for="password">Password</label>
+              <div class="password-container">
+                <input
+                  type="password"
+                  class="input"
+                  id="password"
+                  name="password"
+                  placeholder="Enter your password"
+                  autocomplete="off"
+                  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{10,}"
+                  title="Password must be atleast 10 characters with an uppercase, lowercase, number, and special character (@,$,!,%,?,&)."
+                  minlength="10"
+                  required
+                />
+                <i
+                  class="fas fa-eye toggle-password"
+                  data-target="password"
+                ></i>
+              </div>
+              <div class="password-strength">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+              </div>
+            </div>
+
+            <div class="inputfield">
+              <label for="confirm-password">Confirm Password</label>
+              <div class="password-container">
+                <input
+                  type="password"
+                  class="input"
+                  id="confirm-password"
+                  name="confirm-password"
+                  placeholder="Confirm password"
+                  autocomplete="off"
+                  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{10,}"
+                  title="Must match the password exactly"
+                  minlength="10"
+                  required
+                />
+                <i
+                  class="fas fa-eye toggle-password"
+                  data-target="confirm-password"
+                ></i>
+              </div>
+            </div>
+            <div id="password-message"></div>
+          </div>
+
+          <div class="form-section">
+            <h2>Additional Information</h2>
+
+            <div class="inputfield">
+              <label>Hobbies</label>
+              <div class="checkbox-group" required>
+                <div class="checkbox-option">
+                  <input
+                    type="checkbox"
+                    name="hobbies"
+                    id="music"
+                    value="Music"
+                  />
+                  <label for="music">Music</label>
+                </div>
+                <div class="checkbox-option">
+                  <input
+                    type="checkbox"
+                    name="hobbies"
+                    id="movies"
+                    value="Movies"
+                  />
+                  <label for="movies">Movies</label>
+                </div>
+                <div class="checkbox-option">
+                  <input
+                    type="checkbox"
+                    name="hobbies"
+                    id="sports"
+                    value="Sports"
+                  />
+                  <label for="sports">Sports</label>
+                </div>
+                <div class="checkbox-option">
+                  <input
+                    type="checkbox"
+                    name="hobbies"
+                    id="travel"
+                    value="Travel"
+                  />
+                  <label for="travel">Travel</label>
+                </div>
+                <div class="checkbox-option">
+                  <input
+                    type="checkbox"
+                    name="hobbies"
+                    id="reading"
+                    value="Reading"
+                  />
+                  <label for="reading">Reading</label>
+                </div>
+                <div class="checkbox-option">
+                  <input
+                    type="checkbox"
+                    name="hobbies"
+                    id="gaming"
+                    value="Gaming"
+                  />
+                  <label for="gaming">Gaming</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="inputfield">
+              <label for="myfile">Profile Photo</label>
+              <div class="file-upload">
+                <input
+                  type="file"
+                  name="myfile"
+                  id="myfile"
+                  class="input-file"
+                  accept="image/*"
+                  required
+                />
+                <label for="myfile" class="file-label">
+                  <i class="fas fa-upload"></i>
+                  <span>Choose a file</span>
+                </label>
+                <div class="file-info">No file chosen (Max size: 2MB)</div>
+                <button
+                  type="button"
+                  id="remove-file"
+                  class="btn-remove-file"
+                  style="display: none"
+                  required
+                >
+                  <i class="fas fa-trash"></i> Remove
+                </button>
+              </div>
+            </div>
+
+            <div class="inputfield terms">
+              <label class="check">
+                <input type="checkbox" name="check" value="Declared" required />
+                <span class="checkmark"></span>
+              </label>
+              <p>
+                I hereby declare that the above information provided is true and
+                correct.
+              </p>
+            </div>
+
+            <div class="inputfield" required>
+              <div data-netlify-recaptcha="true"></div>
+            </div>
+
+            <div class="inputfield btns">
+              <button type="submit" class="btn btn-primary">
+                <i class="fas fa-user-plus"></i> Register
+              </button>
+              <button type="reset" class="btn btn-secondary">
+                <i class="fas fa-redo"></i> Reset
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
 </html>
