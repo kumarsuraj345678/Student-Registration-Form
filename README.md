@@ -12,12 +12,12 @@ A modern and fully responsive **Student Registration Form** with built-in valida
 - 🎭 **Interactive UI**: Smooth animations and clear error messaging.
 - 📸 **Profile Photo Upload**: Allows users to upload profile pictures.
 - 📱 **Fully Responsive**: Optimized for all screen sizes.
+- 📃 **Netlify Forms**: Utilizes Netlify Forms for seamless form submission and handling.
 
 ## 🛠️ Technologies Used
 - **HTML5**
 - **CSS3** *(Including animations and custom styles)*
 - **JavaScript (ES6+)** *(Form validation, interactive elements)*
-- **FontAwesome** *(Icons for a modern look)*
 
 ## 🚀 Getting Started
 ### Prerequisites
@@ -44,16 +44,7 @@ Check out the live demo [here](https://srf.netlify.app/).
 
 ## 📸 Screenshots
 ### 📌 Home Page
-![Home Page](https://github.com/user-attachments/assets/home-page.png)
-
-### ✅ Form Validation
-![Form Validation](https://github.com/user-attachments/assets/form-validation.png)
-
-### 🔑 Password Strength
-![Password Strength](https://github.com/user-attachments/assets/password-strength.png)
-
-### 📱 Responsive View
-![Mobile View](https://github.com/user-attachments/assets/mobile-view.png)
+![Macbook-Air-1559x2141](https://github.com/user-attachments/assets/012c63ee-4a73-40a1-ae67-f10f2046bb78)
 
 ## 🤝 Contributing
 Contributions are welcome! Follow these steps:
