@@ -64,7 +64,3 @@ This project is licensed under the MIT License.
 
 ---
 🔥 **Star** this repository if you found it useful! Happy coding! 🚀
-
-=======
-# Student-Registation-Form
->>>>>>> ba6b60a5037686c6343d3695f5cedc9138c5c830
