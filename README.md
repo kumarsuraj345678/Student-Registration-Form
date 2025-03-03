@@ -1,3 +1,4 @@
+<<<<<<< HEAD
  [![Netlify Status](https://api.netlify.com/api/v1/badges/168507ed-6e7d-40a4-bb68-f9d12ad4df4b/deploy-status)](https://app.netlify.com/sites/srf/deploys)
 
 # 🎓 Student Registration Form
@@ -65,3 +66,6 @@ This project is licensed under the MIT License.
 ---
 🔥 **Star** this repository if you found it useful! Happy coding! 🚀
 
+=======
+# Student-Registation-Form
+>>>>>>> ba6b60a5037686c6343d3695f5cedc9138c5c830
